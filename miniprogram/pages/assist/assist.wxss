@@ -39,3 +39,15 @@
 .formItem{
   padding:20rpx;
 }
+
+.listContainer{
+  padding:40rpx;
+}
+.listitem{
+   background: rgba(0, 0, 0, 0.1);
+   padding:20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom:5rpx;
+}

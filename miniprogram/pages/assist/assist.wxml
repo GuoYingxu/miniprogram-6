@@ -9,30 +9,43 @@
 <view wx:if="{{currentTab =='扫描'}}">
   <!-- img -->
   <view>
-    <image style="width:100%;height:500rpx" mode="aspectFit" src ="./1.jpg"></image>
+    <image style="width:100%;height:500rpx" mode="aspectFit" src ="{{imgSrc}}"></image>
   </view>
 
-  <view class="button"> <text>上传名片</text></view>
+  <view class="button" bindtap="getImage"> <text>上传名片</text></view>
   <!-- <button class= 'button' type="default"> 上传名片</button> -->
  
   <!-- form -->
   <view>
-  
+    <view wx:for="{{items}}"   class="formItem">
+      <text>{{item.item}}</text>
+      <input class="inputName" type='text' value="{{item.value}}"></input>
+    
+    </view>
+<!-- 
     <view class="formItem"> 
       <text>姓名</text>
-      <input class="inputName" type='text' value="张三"></input>
+      <input class="inputName" type='text' value="{{name}}"></input>
     </view>
     <view class="formItem"> 
       <text>电话</text>
-      <input class="inputName" type='text' value="1xxxx"></input>
+      <input class="inputName" type='text' value="{{tel}}"></input>
     </view>
     
     <view class="formItem"> 
       <text>公司</text>
-      <input class="inputName" type='text' value="address"></input>
-    </view>
+      <input class="inputName" type='text' value="{{address}}"></input>
+    </view> -->
 
-    <view class="button" style="background:green;color:white"> <text>上传名片</text></view>
+    <view class="button" bindtap="onSave" style="background:green;color:white"> <text>上传名片</text></view>
   </view> 
+</view>
+
+<view class="listContainer" wx:if="{{currentTab == '列表'}}"> 
+
+  <view class="listitem" wx:for="{{list}}" >
+    <text>{{item['姓名']||item['公司']}}</text>
+    <text bindtap="ondelete" data-id= "{{item._id}}">删除</text>
+  </view>
 </view>
 </view>
