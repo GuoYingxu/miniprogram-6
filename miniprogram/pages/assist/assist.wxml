@@ -1,0 +1,38 @@
+<!--miniprogram/pages/assist/assist.wxml-->
+<view>
+  <!-- head -->
+  <view class="header">
+    <view class="{{currentTab =='扫描' ? 'tabItem active' : 'tabItem'}}" bindtap="changeTab" data-tabname='扫描'><text>扫描</text></view>
+    <view class="{{currentTab =='列表' ? 'tabItem active' : 'tabItem'}}"  bindtap="changeTab"  data-tabname='列表' ><text>列表</text></view>
+  </view>
+
+<view wx:if="{{currentTab =='扫描'}}">
+  <!-- img -->
+  <view>
+    <image style="width:100%;height:500rpx" mode="aspectFit" src ="./1.jpg"></image>
+  </view>
+
+  <view class="button"> <text>上传名片</text></view>
+  <!-- <button class= 'button' type="default"> 上传名片</button> -->
+ 
+  <!-- form -->
+  <view>
+  
+    <view class="formItem"> 
+      <text>姓名</text>
+      <input class="inputName" type='text' value="张三"></input>
+    </view>
+    <view class="formItem"> 
+      <text>电话</text>
+      <input class="inputName" type='text' value="1xxxx"></input>
+    </view>
+    
+    <view class="formItem"> 
+      <text>公司</text>
+      <input class="inputName" type='text' value="address"></input>
+    </view>
+
+    <view class="button" style="background:green;color:white"> <text>上传名片</text></view>
+  </view> 
+</view>
+</view>
